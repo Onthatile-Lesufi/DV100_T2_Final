@@ -1,4 +1,4 @@
-let order = JSON.parse(sessionStorage.getItem('order'));
+let order = JSON.parse(localStorage.getItem('order'));
 let totalPrice = 0;
 let discountUsed = false;
 
@@ -56,6 +56,6 @@ verifyCode = () => {
 
 processOrder = () => {
     alert("Thank you for ordering! You will receive confirmation shortly")
-    sessionStorage.removeItem('order');
+    localStorage.removeItem('order');
     window.location.href = '../index.html';
 }

@@ -25,6 +25,11 @@ orderAdd = () => {
         }
     }
 
+    if (topArray.length < 5) {
+        alert("Your sandwich is looking kind of empty, load that bad boy up with some more toppings")
+        return;
+    }
+
     let sauceOptions = document.getElementsByName("sauces");
     let sauceArray = [];
     for(let i = 0; i < sauceOptions.length; i++){
@@ -34,9 +39,12 @@ orderAdd = () => {
         }
     }
 
+    if (sauceArray.length === 0) {
+        alert("Your sandwich is looking kind of dry, consider adding a sauce")
+        return;
+    }
+
     let name = document.getElementById("subName");
-
-
 
     order.push ({
         subBread : breadValue,
@@ -73,7 +81,7 @@ orderAdd = () => {
 checkout = () => {
     if (order.length > 0){
         let data = JSON.stringify(order);
-        sessionStorage.setItem('order' , data);
+        localStorage.setItem('order' , data);
         window.location.href = 'pages/checkout.html'
     } else {
         alert("Please place an order before proceeding to checkout")

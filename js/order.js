@@ -82,7 +82,7 @@ checkout = () => {
     if (order.length > 0){
         let data = JSON.stringify(order);
         localStorage.setItem('order' , data);
-        window.location.href = 'pages/checkout.html'
+        window.location.href = 'checkout.html'
     } else {
         alert("Please place an order before proceeding to checkout")
     }
